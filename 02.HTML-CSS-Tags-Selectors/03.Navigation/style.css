@@ -1,0 +1,10 @@
+nav {
+    font-size: larger;
+    background-color: blanchedalmond;
+}
+
+li {
+    display: inline;
+    margin-right: 10px;
+    list-style-type: none;
+}
