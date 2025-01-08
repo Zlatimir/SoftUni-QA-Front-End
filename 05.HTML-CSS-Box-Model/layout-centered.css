@@ -1,0 +1,14 @@
+body {
+    border: 2px solid green;
+}
+
+div {
+    border: 2px solid blue;
+    margin: 20px;
+}
+
+.class1 {
+    border: 2px solid black;
+    margin: 20px;
+    text-align: center;
+}
