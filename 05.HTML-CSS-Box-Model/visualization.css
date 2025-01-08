@@ -1,0 +1,25 @@
+div {
+    border: 2px dotted black;
+    margin: 20px;
+}
+
+.margin {
+    background-color: orange;
+    padding: 10px;
+}
+
+.border {
+    background-color: yellow;
+    padding: 10px;
+}
+
+.padding {
+    background-color: lightgreen;
+    padding: 10px;
+}
+
+.content {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center;
+}
