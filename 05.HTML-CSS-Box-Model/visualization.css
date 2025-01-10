@@ -1,4 +1,4 @@
-div {
+.margin, .border, .padding, .content {
     border: 2px dotted black;
     margin: 20px;
 }
