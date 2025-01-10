@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    font-family: sans-serif;
+    font-weight: 1200;
+}
+
+nav > *{
+    display: inline;    
+    margin: 0 10px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 2em;
+}
+
+a {
+    margin: 0 2em 0 2em;
+    color: green;
+    text-decoration: none;
+}
