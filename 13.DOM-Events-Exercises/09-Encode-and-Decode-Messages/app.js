@@ -4,6 +4,7 @@ function encodeAndDecodeMessages() {
     const [encodeBtn, decodeBtn] = buttons;
     const [encodeTextArea, decodeTextArea] = textAreas;
 
+    
     encodeBtn.addEventListener('click', () => {
         const message = encodeTextArea.value
             .split('')
