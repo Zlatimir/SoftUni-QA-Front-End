@@ -1,8 +1,11 @@
 const { test, expect } = require('@playwright/test');
+const host = 'http://localhost:3000';
+const userEmail = 'peter@abv.bg';
+const userPassword = '123456';
 
 test.describe('Navbar Links Visibility for non-logged user', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('http://localhost:3000');
+        await page.goto(host);
         await page.waitForSelector('nav.navbar');
     });
 
@@ -27,9 +30,9 @@ test.describe('Navbar Links Visibility for non-logged user', () => {
 
 test.describe('Navbar Links Visibility for logged user', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('http://localhost:3000/login');
-        await page.fill('input[name="email"]', 'peter@abv.bg');
-        await page.fill('input[name="password"]', '123456');
+        await page.goto(host + '/login');
+        await page.fill('input[name="email"]', userEmail);
+        await page.fill('input[name="password"]', userPassword);
         await page.click('input[type="submit"]');
     });
 
