@@ -41,7 +41,7 @@ test.describe('Navbar Links Visibility for logged user', () => {
     });
 
     test('Verify "All books" link is visible', async ({ page }) => {
-        const allBooksLink = await page.$('a[href="/catalog"]');
+        const allBooksLink = await page.locator('a[href="/catalog"]');
         const isLinkVisible = await allBooksLink.isVisible();
         expect(isLinkVisible).toBe(true);
     });
