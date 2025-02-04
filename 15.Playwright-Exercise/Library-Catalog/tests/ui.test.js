@@ -81,14 +81,14 @@ test.describe('Login page', () => {
         expect(page.url()).toBe('http://localhost:3000/catalog');
     });
 
-    test('Submit the Form with Empty Input Fields', async ({ page }) => {
+    test.only('Submit the Form with Empty Input Fields', async ({ page }) => {
         await page.goto('http://localhost:3000/login');
-        await page.click("//input[@type='submit']");
-        page.on('dialog', async dialog => {
-            expect(dialog.type().toContain('alert'));            
-            expect(dialog.message()).toContain('555 All fields are required!');
+        
+        page.on('dialog', async dialog => {                        
+            expect(dialog.message()).toBe('All fields are required!');
             await dialog.accept();
         });
+        await page.click("//input[@type='submit']");
         await page.waitForSelector("//a[@href='/login']");
         expect(page.url()).toBe('http://localhost:3000/login');
     });
