@@ -70,3 +70,26 @@ test.describe('Navbar Links Visibility for logged user', () => {
         expect(textContent).toContain('peter@abv.bg');
     });
 });
+
+test.describe('Login page', () => {
+    test('Log in with Valid Credentials', async ({ page }) => {
+        await page.goto('http://localhost:3000/login');
+        await page.fill("//input[@id='email']", userEmail);
+        await page.fill("//input[@id='password']", userPassword);
+        await page.click("//input[@type='submit']");
+        await page.waitForSelector("//div[@id='user']");
+        expect(page.url()).toBe('http://localhost:3000/catalog');
+    });
+
+    test('Submit the Form with Empty Input Fields', async ({ page }) => {
+        await page.goto('http://localhost:3000/login');
+        await page.click("//input[@type='submit']");
+        page.on('dialog', async dialog => {
+            expect(dialog.type().toContain('alert'));            
+            expect(dialog.message()).toContain('555 All fields are required!');
+            await dialog.accept();
+        });
+        await page.waitForSelector("//a[@href='/login']");
+        expect(page.url()).toBe('http://localhost:3000/login');
+    });
+});
